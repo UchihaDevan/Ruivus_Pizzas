@@ -8,10 +8,15 @@ body {
     line-height: 1.3;
     color: #333;
     background-color: #000d25;
+    background-image: url(/src/pngwing.com.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background: scroll;
 }
 
 .header {
-    background-color: #ea4208;
+    background-color: #09d005;
     color: white;
     padding: 0rem;
     position: sticky;
@@ -29,8 +34,8 @@ body {
 .logo {
     margin-left: 1.5rem;
     font-size: 1rem;
-
     display: flex;
+    margin-top: 0.3rem;
 }
 
 .titulo {
@@ -38,7 +43,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    margin-right: 16rem;
+    margin-bottom: 0.3rem;
   }
 
 .nav-links {
@@ -66,10 +71,15 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(90deg, #227a1b, #50c337);
+    background: linear-gradient(90deg, #000d25, #3d7bed);
     transition: width 0.4s ease-in-out;
 }
 
 .nav-links a:hover:before {
     width: 100%;
+}
+
+.pizza {
+    display: flex;
+    margin-left: 2rem;
 }
