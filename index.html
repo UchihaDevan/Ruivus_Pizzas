@@ -30,15 +30,49 @@
     </div>
   </header>
   <main>
-    <div>
-      <section class="apresentacao">
-        <figure class="pizza">
-          <img src="/src/pngwing.com (3).png" width="25%" alt="Imagem de uma pizza e refrigerante">
-        </figure>
-      </section>
+    <div class="slider">
+      <div class="slides" id="slides">
+          <img src="/src/promoções/DALL·E 2024-11-15 21.05.23 - A vibrant and eye-catching promotional banner for a pizzeria called 'Ruivu's Pizzas'. The design includes a rustic wooden background with a red-and-wh.webp" alt="Slide 1">
+          <img src="/src/promoções/DALL·E 2024-11-15 21.05.46 - A vibrant and eye-catching promotional banner for a pizzeria called 'Ruivu's Pizzas'. The design includes a rustic wooden background with a red-and-wh.webp" alt="Slide 2">
+          <img src="src/promoções/DALL·E 2024-11-15 21.16.09 - A vibrant and appetizing promotional banner for a pizzeria called 'Ruivu's Pizzas' featuring a golden-brown calzone oozing with cheese and fillings li.webp" alt="Slide 3">
+          <img src="src/promoções/DALL·E 2024-11-15 21.16.17 - A vibrant and appetizing promotional banner for a pizzeria called 'Ruivu's Pizzas' featuring a golden-brown calzone oozing with cheese and fillings li.webp" alt="Slide 4">
+      </div>
+      <div class="buttons">
+          <button id="prev">&#10094;</button>
+          <button id="next">&#10095;</button>
+      </div>
     </div>
+
+    <script>
+      const slides = document.getElementById('slides');
+      const images = slides.querySelectorAll('img');
+      const totalSlides = images.length;
+      let currentIndex = 0;
+
+      document.getElementById('next').addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateSlidePosition();
+      });
+
+      document.getElementById('prev').addEventListener('click', () => {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateSlidePosition();
+      });
+
+      function updateSlidePosition() {
+          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      // Troca automática de slides a cada 5 segundos
+      setInterval(() => {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateSlidePosition();
+      }, 5000);
+  </script>
   </main>
-  <footer><p>&copy; 2024 - Ruivu's Pizzas</p></footer>
+  <footer>
+    <p>&copy; 2024 - Ruivu's Pizzas</p>
+  </footer>
 </body>
 
 </html>

@@ -12,7 +12,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background: scroll;
 }
 
 .header {
@@ -82,4 +81,57 @@ body {
 .pizza {
     display: flex;
     margin-left: 2rem;
+    position: absolute;
+}
+
+.pizza img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.promoFundo {
+    width: 512px;
+    height: 512px;
+    background-color: beige;
+    position: absolute;
+    top: 0;
+}
+
+.slider {
+    position: relative;
+    width: 50%;
+    max-width: 700px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slides img {
+    width: 100%;
+    border: none;
+}
+
+.buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+.buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
