@@ -82,6 +82,43 @@ div{
 .nav-links a:hover:before {
     width: 100%;
 }
+.nav-links li a:hover {
+    color: #f0a500;
+}
+
+.menu-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+@media (max-width: 720px) {
+    .menu-mobile {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+.menu-mobile span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
 
 .slider {
     position: relative;
@@ -127,7 +164,7 @@ div{
 
 .pizzas-container {
     display: flex;
-    width: 90%;
+    width: 80%;
     margin: 50px auto;
     position: relative;       /* Define posição como relativa */
     overflow: visible;
