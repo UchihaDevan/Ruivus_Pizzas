@@ -15,13 +15,11 @@
   <header class="header">
     <div class="container">
       <figure class="logo">
-        <a href="#index"><img src="src/icon.png" width="40px" alt="Logo da Pizzaria Ruivu's Pizzas"></a>
+        <a href="#index"><img src="src/icon.png" width="40" alt="Logo da Pizzaria Ruivu's Pizzas"></a>
       </figure>
       <h1 class="titulo">RUIVU'S PIZZAS</h1>
-      <nav>
+      <nav class="navbar">
         <div class="menu-mobile" id="menu-mobile">
-          <span></span>
-          <span></span>
           <span></span>
           <span></span>
           <span></span>
@@ -39,13 +37,19 @@
   <main>
     <div class="slider">
       <div class="slides" id="slides">
-          <img src="src/promoções/DALL·E 2024-11-15 21.14.48 - A colorful and appetizing promotional banner for a pizzeria called 'Ruivu's Pizzas'. The banner should feature a freshly baked pizza with melted chees.webp" alt="Slide 1">
-          <img src="src/promoções/DALL·E 2024-11-15 21.16.09 - A vibrant and appetizing promotional banner for a pizzeria called 'Ruivu's Pizzas' featuring a golden-brown calzone oozing with cheese and fillings li.webp" alt="Slide 2">
-          <img src="src/promoções/DALL·E 2024-11-15 21.16.17 - A vibrant and appetizing promotional banner for a pizzeria called 'Ruivu's Pizzas' featuring a golden-brown calzone oozing with cheese and fillings li.webp" alt="Slide 3">
+        <img
+          src="src/promoções/DALL·E 2024-11-15 21.14.48 - A colorful and appetizing promotional banner for a pizzeria called 'Ruivu's Pizzas'. The banner should feature a freshly baked pizza with melted chees.webp"
+          alt="Slide 1">
+        <img
+          src="src/promoções/DALL·E 2024-11-15 21.16.09 - A vibrant and appetizing promotional banner for a pizzeria called 'Ruivu's Pizzas' featuring a golden-brown calzone oozing with cheese and fillings li.webp"
+          alt="Slide 2">
+        <img
+          src="src/promoções/DALL·E 2024-11-15 21.16.17 - A vibrant and appetizing promotional banner for a pizzeria called 'Ruivu's Pizzas' featuring a golden-brown calzone oozing with cheese and fillings li.webp"
+          alt="Slide 3">
       </div>
       <div class="buttons">
-          <button id="prev">&#10094;</button>
-          <button id="next">&#10095;</button>
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
       </div>
     </div>
 
@@ -53,11 +57,11 @@
       <div class="combo">
         <div class="combo-detalhes">
           <div class="descricao-combo">
-            <div class="combo-titulo">Combo Exclusivo</div>
+            <div class="combo-titulo"><h2>Combo Exclusivo</h2></div>
           </div>
           <div class="combo-itens">
-            <div>1 - Calabresa</div>
-            <div>1 - refri lata</div>
+            <div><h3>1 - Calabresa</h3></div>
+            <div><h3>1 - refri lata</h3></div>
           </div>
         </div>
         <div class="combo-img">
@@ -65,18 +69,18 @@
         </div>
         <div class="btn-pedir">
 
-        </div>        
+        </div>
       </div>
 
       <div class="combo">
         <div class="combo-detalhes">
           <div class="descricao-combo">
-            <div class="combo-titulo">Combo extra Pizza Prime</div>
+            <div class="combo-titulo"><h2>Combo extra Pizza Prime</h2></div>
           </div>
           <div class="combo-itens">
-            <div>1 - Frango</div>
-            <div>1 - 4 Queijos</div>
-            <div>1 - refri 1,5L</div>
+            <div><h3>1 - Frango</h3></div>
+            <div><h3>1 - 4 Queijos</h3></div>
+            <div><h3>1 - refri 1,5L</h3></div>
           </div>
         </div>
         <div class="combo-img">
@@ -84,13 +88,13 @@
         </div>
         <div class="pizza-pedir">
 
-        </div>        
+        </div>
       </div>
 
       <div class="combo">
         <div class="combo-detalhes">
           <div class="descricao-combo">
-            <div class="combo-titulo">Combo Pizza Prime</div>
+            <div class="combo-titulo"><h2>Combo Pizza Premium</h2></div>
           </div>
           <div class="combo-itens">
             <div>1 - Frango com Catupiry</div>
@@ -101,14 +105,14 @@
           <img src="src/Pizzas/Combo+Premium_Pizza+Prime.webp" alt="foto do combo premium">
         </div>
         <div class="pizza-pedir">
-
-        </div>        
+          <div><button>Pedir Agora</button></div>
+        </div>
       </div>
 
       <div class="combo">
         <div class="combo-detalhes">
           <div class="descricao-combo">
-            <div class="combo-titulo">Combo Supremo</div>
+            <div class="combo-titulo"><h2>Combo Supremo</h2></div>
           </div>
           <div class="combo-itens">
             <div>1 - Pizza G carne do Sol</div>
@@ -121,13 +125,18 @@
         </div>
         <div class="pizza-pedir">
 
-        </div>        
+        </div>
       </div>
-      
+
     </div>
-    
-    <script src="script.js"></script>
-    
+
+    <script>
+      document.getElementById('menu-mobile').addEventListener('click', function () {
+        const navLinks = document.getElementById('nav-links');
+        navLinks.classList.toggle('show');
+      });
+    </script>
+
     <script>
       const slides = document.getElementById('slides');
       const images = slides.querySelectorAll('img');
@@ -135,25 +144,25 @@
       let currentIndex = 0;
 
       document.getElementById('next').addEventListener('click', () => {
-          currentIndex = (currentIndex + 1) % totalSlides;
-          updateSlidePosition();
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlidePosition();
       });
 
       document.getElementById('prev').addEventListener('click', () => {
-          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-          updateSlidePosition();
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
       });
 
       function updateSlidePosition() {
-          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
       }
 
       // Troca automática de slides a cada 5 segundos
       setInterval(() => {
-          currentIndex = (currentIndex + 1) % totalSlides;
-          updateSlidePosition();
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlidePosition();
       }, 5000);
-  </script>
+    </script>
   </main>
   <footer>
     <p>&copy; 2024 - Ruivu's Pizzas</p>
