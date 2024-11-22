@@ -148,10 +148,11 @@ div{
         width: 150px;
     }
     .slider img{
-        width: cover;
+        width: 40%;
         margin-top: 2rem;
-        height: 1200px;
+        height: 100rem;
         padding: 0;
+        border-radius: 20px;
     }
 }
 
@@ -174,7 +175,7 @@ div{
     max-width: 95%;
     margin: 2rem auto;
     overflow: hidden;
-    border-radius: 14px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
