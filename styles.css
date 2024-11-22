@@ -148,7 +148,7 @@ div{
         width: 150px;
     }
     .slider img{
-        width: 40%;
+        width: cover;
         margin-top: 2rem;
         height: 100rem;
         padding: 0;
