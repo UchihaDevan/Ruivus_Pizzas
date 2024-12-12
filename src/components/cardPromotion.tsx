@@ -7,7 +7,7 @@ const ImageContentSection: React.FC = () => {
         {/* Imagem do Lado Esquerdo */}
         <div className="w-full h-96">
           <img 
-            src="/src/imgs/img_container.png" 
+            src="https://raw.githubusercontent.com/UchihaDevan/Ruivus_Pizzas/refs/heads/main/src/imgs/img_container.png" 
             alt="Descrição da Imagem" 
             className="w-full h-full object-cover rounded-lg"
           />

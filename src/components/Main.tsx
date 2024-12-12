@@ -13,21 +13,21 @@ const carouselItems: CarouselItem[] = [
   {
     id: 1,
     image:
-      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img1.webp",
+      "https://raw.githubusercontent.com/UchihaDevan/Ruivus_Pizzas/refs/heads/main/src/imgs/slides/img1.webp",
     title: "Primeiro Slide",
     description: "Descrição do primeiro slide",
   },
   {
     id: 2,
     image:
-      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img2.webp",
+      "https://raw.githubusercontent.com/UchihaDevan/Ruivus_Pizzas/refs/heads/main/src/imgs/slides/img2.webp",
     title: "Segundo Slide",
     description: "Descrição do segundo slide",
   },
   {
     id: 3,
     image:
-      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img3.webp",
+      "https://raw.githubusercontent.com/UchihaDevan/Ruivus_Pizzas/refs/heads/main/src/imgs/slides/img3.webp",
     title: "Terceiro Slide",
     description: "Descrição do terceiro slide",
   },

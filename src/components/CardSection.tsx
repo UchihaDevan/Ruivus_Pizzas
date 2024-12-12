@@ -13,28 +13,28 @@ interface CardData {
 const cardsData: CardData[] = [
   {
     id: 1,
-    image: "/src/imgs/Pizzas/combo1.webp",
+    image: "https://raw.githubusercontent.com/UchihaDevan/Ruivus_Pizzas/refs/heads/main/src/imgs/Pizzas/combo1.webp",
     title: "Serviço Básico",
     description: "Descrição detalhada do serviço básico oferecido.",
     price: 39
   },
   {
     id: 2,
-    image: "/src/imgs/Pizzas/combo2.webp", 
+    image: "https://raw.githubusercontent.com/UchihaDevan/Ruivus_Pizzas/refs/heads/main/src/imgs/Pizzas/combo2.webp", 
     title: "Serviço Intermediário",
     description: "Descrição detalhada do serviço intermediário com recursos adicionais.",
     price: 45
   },
   {
     id: 3,
-    image: "/src/imgs/Pizzas/combo3.webp",
+    image: "https://raw.githubusercontent.com/UchihaDevan/Ruivus_Pizzas/refs/heads/main/src/imgs/Pizzas/combo3.webp",
     title: "Serviço Avançado", 
     description: "Descrição detalhada do serviço avançado com todos os recursos premium.",
     price: 42.50
   },
   {
     id: 4,
-    image: "/src/imgs/Pizzas/combo4.webp",
+    image: "https://raw.githubusercontent.com/UchihaDevan/Ruivus_Pizzas/refs/heads/main/src/imgs/Pizzas/combo4.webp",
     title: "Serviço Avançado", 
     description: "Descrição detalhada do serviço avançado com todos os recursos premium.",
     price: 49.80
@@ -54,7 +54,7 @@ const CardSection: React.FC = () => {
               {/* Imagem do Card */}
               <div className="relative">
                 <img 
-                  src={card.image} 
+                  src={card.image}
                   alt={card.title} 
                   className="w-full object-cover"
                 />
