@@ -12,19 +12,22 @@ interface CarouselItem {
 const carouselItems: CarouselItem[] = [
   {
     id: 1,
-    image: "/src/imgs/slides/img1.webp",
+    image:
+      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img1.webp",
     title: "Primeiro Slide",
     description: "Descrição do primeiro slide",
   },
   {
     id: 2,
-    image: "/src/imgs/slides/img2.webp",
+    image:
+      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img2.webp",
     title: "Segundo Slide",
     description: "Descrição do segundo slide",
   },
   {
     id: 3,
-    image: "/src/imgs/slides/img3.webp",
+    image:
+      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img3.webp",
     title: "Terceiro Slide",
     description: "Descrição do terceiro slide",
   },
@@ -107,9 +110,7 @@ const Carousel: React.FC = () => {
           ))}
         </div>
       </section>
-      <section>
-        
-      </section>
+      <section></section>
     </main>
   );
 };
