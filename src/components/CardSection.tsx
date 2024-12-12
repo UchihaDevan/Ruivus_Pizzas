@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Interface para os dados do card
 interface CardData {
@@ -13,32 +13,39 @@ interface CardData {
 const cardsData: CardData[] = [
   {
     id: 1,
-    image: "/src/imgs/Pizzas/combo1.webp",
+    image:
+      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img1.webp",
     title: "Serviço Básico",
     description: "Descrição detalhada do serviço básico oferecido.",
-    price: 39
+    price: 39,
   },
   {
     id: 2,
-    image: "/src/imgs/Pizzas/combo2.webp", 
+    image:
+      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img2.webp",
     title: "Serviço Intermediário",
-    description: "Descrição detalhada do serviço intermediário com recursos adicionais.",
-    price: 45
+    description:
+      "Descrição detalhada do serviço intermediário com recursos adicionais.",
+    price: 45,
   },
   {
     id: 3,
-    image: "/src/imgs/Pizzas/combo3.webp",
-    title: "Serviço Avançado", 
-    description: "Descrição detalhada do serviço avançado com todos os recursos premium.",
-    price: 42.50
+    image:
+      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img3.webp",
+    title: "Serviço Avançado",
+    description:
+      "Descrição detalhada do serviço avançado com todos os recursos premium.",
+    price: 42.5,
   },
   {
     id: 4,
-    image: "/src/imgs/Pizzas/combo4.webp",
-    title: "Serviço Avançado", 
-    description: "Descrição detalhada do serviço avançado com todos os recursos premium.",
-    price: 49.80
-  }
+    image:
+      "https://github.com/UchihaDevan/Ruivus_Pizzas/blob/main/src/imgs/slides/img4.webp",
+    title: "Serviço Avançado",
+    description:
+      "Descrição detalhada do serviço avançado com todos os recursos premium.",
+    price: 49.8,
+  },
 ];
 
 const CardSection: React.FC = () => {
@@ -47,18 +54,18 @@ const CardSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {cardsData.map((card) => (
-            <div 
-              key={card.id} 
+            <div
+              key={card.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
             >
               {/* Imagem do Card */}
               <div className="relative">
-                <img 
-                  src={card.image} 
-                  alt={card.title} 
+                <img
+                  src={card.image}
+                  alt={card.title}
                   className="w-full object-cover"
                 />
-                
+
                 {/* Preço no canto superior direito */}
                 <div className="absolute top-4 right-4 bg-gray-900 text-white px-3 py-1 rounded-full text-lg font-bold">
                   R$ {card.price.toFixed(2)}
@@ -73,9 +80,7 @@ const CardSection: React.FC = () => {
                 </h3>
 
                 {/* Descrição */}
-                <p className="text-gray-600 mt-4">
-                  {card.description}
-                </p>
+                <p className="text-gray-600 mt-4">{card.description}</p>
 
                 {/* Botão de Ação */}
                 <button className="mt-6 w-full bg-gray-900 text-white py-3 rounded-2xl hover:bg-orange-600 transition duration-300">
