@@ -49,7 +49,7 @@ const CardSection: React.FC = () => {
           {cardsData.map((card) => (
             <div 
               key={card.id} 
-              className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+              className="bg-green-lima rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-2xl hover:scale-105"
             >
               {/* Imagem do Card */}
               <div className="relative">
@@ -73,12 +73,12 @@ const CardSection: React.FC = () => {
                 </h3>
 
                 {/* Descrição */}
-                <p className="text-gray-600 mt-4">
+                <p className="text-slate-100 mt-4">
                   {card.description}
                 </p>
 
                 {/* Botão de Ação */}
-                <button className="mt-6 w-full bg-gray-900 text-white py-3 rounded-2xl hover:bg-orange-600 transition duration-300">
+                <button className="mt-6 w-full bg-gray-900 text-white py-3 rounded-full hover:bg-orange-600 transition duration-300">
                   Contratar Serviço
                 </button>
               </div>

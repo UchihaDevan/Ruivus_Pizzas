@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// Interface para os itens do carrossel
 interface CarouselItem {
   id: number;
   image: string;
@@ -8,7 +7,6 @@ interface CarouselItem {
   description: string;
 }
 
-// Itens do carrossel
 const carouselItems: CarouselItem[] = [
   {
     id: 1,
@@ -49,54 +47,50 @@ const Carousel: React.FC = () => {
   };
 
   return (
-      <section className="mt-3 relative w-full max-w-6xl mx-auto">
-        {/* Container do Carrossel */}
-        <div className="relative overflow-hidden rounded-lg">
-          {/* Slide Atual */}
-          <div className="w-full relative">
-            <img
-              src={carouselItems[currentIndex].image}
-              alt={carouselItems[currentIndex].title}
-              className="rounded-2xl w-full h-full object-cover"
-            />
+    <section className="mt-3 relative w-screen max-w-auto mx-auto">
+      {/* Container do Carrossel */}
+      <div className="relative overflow-hidden rounded-lg">
+        <div
+          className="w-full h-auto md:h-auto transition-transform duration-500 ease-in-out"
+          key={carouselItems[currentIndex].id}
+        >
+          <img
+            src={carouselItems[currentIndex].image}
+            alt={carouselItems[currentIndex].title}
+            className="w-full h-[80vh] object-cover rounded-2xl"
+          />
 
-            {/* Overlay de Informações */}
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white">
-              <h2 className="text-2xl font-bold">
-                {carouselItems[currentIndex].title}
-              </h2>
-              <p className="mt-2">{carouselItems[currentIndex].description}</p>
-            </div>
+          {/* Overlay de Informações */}
+          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white">
+            <h2 className="text-2xl font-bold">
+              {carouselItems[currentIndex].title}
+            </h2>
+            <p className="mt-2">{carouselItems[currentIndex].description}</p>
           </div>
-
-          {/* Botão Anterior */}
-          <button
-            onClick={prevSlide}
-            className="absolute top-1/2 left-4 -translate-y-1/2 
-            bg-white/50 rounded-full p-2 hover:bg-white/75 
-            transition-colors duration-300"
-          >
-            &#10094; {/* Símbolo de seta para esquerda */}
-          </button>
-
-          {/* Botão Próximo */}
-          <button
-            onClick={nextSlide}
-            className="absolute top-1/2 right-4 -translate-y-1/2 
-            bg-white/50 rounded-full p-2 hover:bg-white/75 
-            transition-colors duration-300"
-          >
-            &#10095; {/* Símbolo de seta para direita */}
-          </button>
         </div>
 
-        {/* Navegação por Pontos */}
-        <div className="flex justify-center mt-4 space-x-2">
-          {carouselItems.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`
+        {/* Botões de Navegação */}
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/50 rounded-full p-2 hover:bg-white/75 transition-colors duration-300"
+        >
+          &#10094;
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/50 rounded-full p-2 hover:bg-white/75 transition-colors duration-300"
+        >
+          &#10095;
+        </button>
+      </div>
+
+      {/* Navegação por Pontos */}
+      <div className="flex justify-center mt-4 space-x-2">
+        {carouselItems.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`
               w-3 h-3 rounded-full 
               ${
                 index === currentIndex
@@ -105,10 +99,10 @@ const Carousel: React.FC = () => {
               }
               transition-colors duration-300
             `}
-            />
-          ))}
-        </div>
-      </section>
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 
