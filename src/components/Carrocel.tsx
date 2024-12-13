@@ -49,7 +49,6 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <main>
       <section className="mt-3 relative w-full max-w-6xl mx-auto">
         {/* Container do Carrossel */}
         <div className="relative overflow-hidden rounded-lg">
@@ -110,8 +109,6 @@ const Carousel: React.FC = () => {
           ))}
         </div>
       </section>
-      <section></section>
-    </main>
   );
 };
 
