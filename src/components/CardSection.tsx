@@ -43,7 +43,7 @@ const cardsData: CardData[] = [
 
 const CardSection: React.FC = () => {
   return (
-    <section className="mt-5 py-12 bg-gray-100">
+    <section className=" py-12 bg-gray-950">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {cardsData.map((card) => (
@@ -60,7 +60,7 @@ const CardSection: React.FC = () => {
                 />
                 
                 {/* Preço no canto superior direito */}
-                <div className="absolute top-4 right-4 bg-gray-900 text-white px-3 py-1 rounded-full text-lg font-bold">
+                <div className="absolute top-4 right-4 bg-gray-950 text-white px-3 py-1 rounded-full text-lg font-bold">
                   R$ {card.price.toFixed(2)}
                 </div>
               </div>
@@ -68,7 +68,7 @@ const CardSection: React.FC = () => {
               {/* Conteúdo do Card */}
               <div className="p-6 relative">
                 {/* Título na parte inferior esquerda */}
-                <h3 className="absolute -top-6 left-6 bg-gray-900 text-white px-4 py-2 rounded-t-lg text-xl font-bold">
+                <h3 className="absolute -top-6 left-6 bg-gray-950 text-white px-4 py-2 rounded-t-lg text-xl font-bold">
                   {card.title}
                 </h3>
 
@@ -78,7 +78,7 @@ const CardSection: React.FC = () => {
                 </p>
 
                 {/* Botão de Ação */}
-                <button className="mt-6 w-full bg-gray-900 text-white py-3 rounded-full hover:bg-orange-600 transition duration-300">
+                <button className="mt-6 w-full bg-gray-950 text-white py-3 rounded-full hover:bg-green-600 transition duration-300">
                   Contratar Serviço
                 </button>
               </div>
