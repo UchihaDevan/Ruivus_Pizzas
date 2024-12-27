@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface ImageCardProps {
   src: string;
@@ -12,24 +12,34 @@ const ImageCard: React.FC<ImageCardProps> = ({ src, title }) => (
       alt={`Imagem relacionada a ${title}`}
       className="w-full h-auto rounded-lg shadow-lg"
     />
-    <h3 className="mt-4 text-lg font-semibold text-gray-100">{title}</h3>
+    <h3 className="mt-4 text-2xl font-semibold text-gray-100">{title}</h3>
   </div>
 );
 
 const ImageCarousel: React.FC = () => {
   const images = [
-    { src: "/src/imgs/pngwing.com (3).png", title: "Título 1" },
-    { src: "/src/imgs/pngwing.com (3).png", title: "Título 2" },
-    { src: "/src/imgs/pngwing.com (3).png", title: "Título 3" },
+    { src: "/src/imgs/Calzones/calzone1.png", title: "Título 1" },
+    { src: "/src/imgs/Calzones/calzone2.png", title: "Título 2" },
+    { src: "/src/imgs/Calzones/calzone3.png", title: "Título 3" },
     { src: "/src/imgs/pngwing.com (3).png", title: "Título 4" },
     { src: "/src/imgs/pngwing.com (3).png", title: "Título 5" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(1);
 
-  // Define quantas imagens mostrar por slide
-  const slidesToShow = window.innerWidth >= 768 ? 3 : 1; // 3 imagens no desktop, 1 no mobile
-  const totalSlides = Math.ceil(images.length / slidesToShow);
+  useEffect(() => {
+    const updateSlidesToShow = () => {
+      setSlidesToShow(window.innerWidth >= 768 ? 3 : 1);
+    };
+
+    updateSlidesToShow();
+    window.addEventListener("resize", updateSlidesToShow);
+
+    return () => window.removeEventListener("resize", updateSlidesToShow);
+  }, []);
+
+  const totalSlides = Math.ceil(images.length / 1);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -45,14 +55,16 @@ const ImageCarousel: React.FC = () => {
 
   return (
     <section className="flex flex-col items-center bg-gray-950 min-h-screen p-6">
-      <h2 className="text-2xl font-bold mb-6 text-gray-100">Galeria</h2>
+      <h2 className="text-4xl font-bold mb-6 text-gray-100">
+        Nossos Calzones de <span className="text-green-lima">outra galáxia</span>!
+      </h2>
       {/* Carrossel */}
       <div className="relative w-full max-w-6xl overflow-hidden">
         <div
-          className="flex transition-transform duration-500"
+          className="flex transition-transform duration-500 items-center"
           style={{
-            transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)`,
-            width: `${(75 / slidesToShow) * images.length}%`,
+            transform: `translateX(-${(currentIndex * 100) / slidesToShow}%)`,
+            width: `${(70 / slidesToShow) * images.length}%`,
           }}
         >
           {images.map((image, index) => (
@@ -60,7 +72,7 @@ const ImageCarousel: React.FC = () => {
               key={index}
               className="flex-shrink-0"
               style={{
-                width: `${80 / slidesToShow}%`, // Distribui a largura dinamicamente
+                width: `${100 / slidesToShow}%`,
               }}
             >
               <ImageCard src={image.src} title={image.title} />
@@ -71,13 +83,13 @@ const ImageCarousel: React.FC = () => {
         {/* Botões de navegação */}
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-2 -translate-y-1/2 bg-orange-600 text-white p-2 rounded-full hover:bg-gray-700 transition"
+          className="absolute top-1/2 left-4 -translate-y-1/2 bg-green-lima text-white p-2 rounded-full hover:bg-gray-700 transition"
         >
           ‹
         </button>
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-2 -translate-y-1/2 bg-orange-600 text-white p-2 rounded-full hover:bg-gray-700 transition"
+          className="absolute top-1/2 right-4 -translate-y-1/2 bg-green-lima text-white p-2 rounded-full hover:bg-gray-700 transition"
         >
           ›
         </button>
@@ -89,7 +101,7 @@ const ImageCarousel: React.FC = () => {
           <button
             key={index}
             className={`w-3 h-3 rounded-full ${
-              currentIndex === index ? "bg-orange-500" : "bg-gray-400"
+              currentIndex === index ? "bg-green-lima" : "bg-gray-400"
             }`}
             onClick={() => setCurrentIndex(index)}
           />

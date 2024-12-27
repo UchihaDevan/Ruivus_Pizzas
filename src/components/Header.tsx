@@ -70,11 +70,11 @@ function Header() {
           isMenuOpen ? "block" : "hidden"
         } absolute md:static top-16 left-0 right-0 bg-gray-950 md:bg-transparent md:flex z-40`}
       >
-        <ul className="flex flex-col md:flex-row items-center gap-4 text-slate-50 text-lg md:text-2xl font-medium p-4 md:p-0">
+        <ul className="flex flex-col md:flex-row items-center gap-8 text-slate-50 text-lg md:text-2xl font-medium p-4 md:p-0">
           <li>
             <a
               href="#sobre"
-              className="hover:text-orange-600 transition-colors"
+              className="hover:text-green-lima transition-colors"
               aria-label="Ir para a seção Sobre"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -84,7 +84,7 @@ function Header() {
           <li>
             <a
               href="#contato"
-              className="hover:text-orange-600 transition-colors"
+              className="hover:text-green-lima transition-colors"
               aria-label="Ir para a seção Contato"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -94,15 +94,28 @@ function Header() {
           <li>
             <a
               href="#produtos"
-              className="hover:text-orange-600 transition-colors"
+              className="hover:text-green-lima transition-colors"
               aria-label="Ir para a seção Produtos"
               onClick={() => setIsMenuOpen(false)}
             >
               Produtos
             </a>
           </li>
+          <li>
+            <a
+              href="#cardapio"
+              className="hover:text-green-lima transition-colors"
+              aria-label="Ir para a seção Sobre"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Cardapio
+            </a>
+          </li>
         </ul>
       </nav>
+      <div>
+        <button className="text-slate-100 text-xl bg-green-lima rounded-3xl p-3 font-bold hover:scale-105 hover:shadow-[0_0_10px_#00e645]">Contato</button>
+      </div>
     </header>
   );
 }
