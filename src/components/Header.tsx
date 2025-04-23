@@ -1,123 +1,84 @@
-import { useState } from "react";
 
-function Header() {
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import CartIcon from './CartIcon';
+
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-gray-950 relative z-50">
-      {/* Logo e título */}
-      <div className="flex items-center">
-        <a href="#" aria-label="Página inicial">
-          <img
-            src="icon.png"
-            className="w-12 h-12 object-contain"
-            alt="Ruivu's Pizzas"
-          />
-        </a>
-        <a href="#" aria-label="Página inicial">
-          <h1 className="text-green-lima ml-3 text-3xl md:text-5xl font-extrabold">
-            Ruivu's Pizzas
-          </h1>
-        </a>
+    <header className="sticky top-0 z-50 bg-primary text-white shadow-md">
+      <div className="container mx-auto py-4 px-4 flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex items-center">
+          <h1 className="text-2xl font-bold text-white">Ruivu's Pizzas</h1>
+        </div>
+
+        {/* Cart Icon (Always Visible) */}
+        <div className="flex items-center gap-4">
+          <CartIcon />
+          
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={toggleMenu} 
+            className="p-2 rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-secondary"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
-      {/* Botão Hamburguer */}
-      <button
-        onClick={toggleMenu}
-        className="block md:hidden text-white focus:outline-none z-50"
-        aria-label="Abrir menu"
-      >
-        {isMenuOpen ? (
-          <svg
-            className="w-8 h-8"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        ) : (
-          <svg
-            className="w-8 h-8"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        )}
-      </button>
-
-      {/* Navegação */}
-      <nav
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } absolute md:static top-16 left-0 right-0 bg-gray-950 md:bg-transparent md:flex z-40`}
-      >
-        <ul className="flex flex-col md:flex-row items-center gap-8 text-slate-50 text-lg md:text-2xl font-medium p-4 md:p-0">
-          <li>
-            <a
-              href="#sobre"
-              className="hover:text-green-lima transition-colors"
-              aria-label="Ir para a seção Sobre"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Sobre
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contato"
-              className="hover:text-green-lima transition-colors"
-              aria-label="Ir para a seção Contato"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contato
-            </a>
-          </li>
-          <li>
-            <a
-              href="#produtos"
-              className="hover:text-green-lima transition-colors"
-              aria-label="Ir para a seção Produtos"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Produtos
-            </a>
-          </li>
-          <li>
-            <a
-              href="#cardapio"
-              className="hover:text-green-lima transition-colors"
-              aria-label="Ir para a seção Sobre"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Cardapio
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <button className="text-slate-100 text-xl bg-green-lima rounded-3xl p-3 font-bold hover:scale-105 hover:shadow-[0_0_10px_#00e645]">Contato</button>
-      </div>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 right-0 bg-primary border-t border-gray-700 animate-fade-in">
+          <nav className="container mx-auto py-4 px-4">
+            <ul className="space-y-4">
+              <li>
+                <a 
+                  href="#home" 
+                  className="block py-2 px-4 hover:bg-gray-800 rounded-md transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Início
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#featured" 
+                  className="block py-2 px-4 hover:bg-gray-800 rounded-md transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Destaques
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#beverages" 
+                  className="block py-2 px-4 hover:bg-gray-800 rounded-md transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Bebidas
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#about" 
+                  className="block py-2 px-4 hover:bg-gray-800 rounded-md transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Sobre
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
-}
+};
 
 export default Header;
