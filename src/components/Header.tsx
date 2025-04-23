@@ -2,9 +2,16 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import CartIcon from './CartIcon';
+import Cart from './Cart';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,7 +27,8 @@ const Header: React.FC = () => {
 
         {/* Cart Icon (Always Visible) */}
         <div className="flex items-center gap-4">
-          <CartIcon />
+        <CartIcon onClick={() => setIsCartOpen(true)} />
+        {isCartOpen && <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />}
           
           {/* Mobile Menu Button */}
           <button 
